@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'MainFont';
+    src: url('../../lib/fonts/gunmetl-webfont.eot');
+    src: url('../../lib/fonts/gunmetl-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../lib/fonts/gunmetl-webfont.woff2') format('woff2'),
+         url('../../lib/fonts/gunmetl-webfont.woff') format('woff'),
+         url('../../lib/fonts/gunmetl-webfont.ttf') format('truetype'),
+         url('../../lib/fonts/gunmetl-webfont.svg#gunmetalregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.body-bg() {
+    content: ' ';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 20%;
+    height: 100%;
+    background-image: url('../../img/bg.svg');
+    background-size: cover;
+    background-color: #025868;
+}
+
+html{
+    background-color: #025868;
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    
+    &:after {
+        .body-bg();
+        right: 0;
+        top: 0;
+        transform: rotatey(180deg);
+    }
+    
+    &:before {
+        .body-bg();
+    }
+}
+
+.main{
+    min-height: 100%;
+}
+
+h1{   
+    font-size: 125px;
+    text-align: center;
+}
+
+h1,h2,h3,h4,p,li,a{
+    font-family: "MainFont";
+    color: #A85200;
+    text-align: center;
+}
+
+li{
+    list-style: none;
+    margin-left: 0;
+}

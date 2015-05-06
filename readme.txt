@@ -1,4 +1,4 @@
-# Battleship.js
+Battleship.js
 
 Created by Borja Guzmán del Río
 

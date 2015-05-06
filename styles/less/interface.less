@@ -1,0 +1,118 @@
+@b1: "b1";
+@b2: "b2";
+
+.button-style (@type) when (@type = @b1) {
+    background-color: #2A1400;
+    border: 1px solid #01161A;
+    color: #025868;
+}
+
+.button-style (@type) when (@type = @b2) {
+    background-color: #360500;
+    border: 1px solid #01161A;
+    color: #A85200;
+}
+
+.box-shadow(@type; @dimensions) {
+    -webkit-box-shadow: @type @dimensions rgba(0,0,0,0.75);
+    -moz-box-shadow: @type @dimensions rgba(0,0,0,0.75);
+    box-shadow: @type @dimensions rgba(0,0,0,0.75);
+}
+
+button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 35px;
+    font-family: "MainFont";
+    text-align: center;
+    cursor: pointer;
+    
+    &.info-button{
+        .button-style("b1");
+    }
+    
+    &.danger-button{
+        .button-style("b2");
+    }
+}
+
+.start-battle {
+    
+    button{
+        border-radius: 50%;
+        height: 175px;
+        width: 175px;
+        background-color: #6B0A00;
+        border-color: #A21203;
+        border-width: 5px;
+        color: #A85200;
+        font-size: 45px;
+    }
+}
+
+
+a {
+    display: block;
+    
+    &:hover {
+        background-image: url('../../img/target.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left;
+        background-color: rgba( 162,18,3, .3);
+        cursor:pointer;
+    }
+    
+    &:visited, &:hover {
+        text-decoration: none;
+    }
+}
+
+.interface-container{
+    margin: 20px auto;
+    width: 80%;
+    min-height: 300px;
+    max-height: 450px;
+    overflow-y: auto;
+    text-align: center;
+    position: relative;
+    padding: 30px 5px;
+    border-radius: 2px;
+    background-color: #002007;
+    border: 10px solid silver;
+    
+    .box-shadow( inset, 0px 0px 10px 10px);
+    
+    &>div{
+        &:last-child{
+            position: absolute;
+            height: 100%;
+            right: 0;   
+            top: 0;
+            &>div{
+                height: 100%;
+            }
+        }
+    }
+}
+
+.modal-open {
+    
+    .modal {
+        overflow-x: visible!important;
+        overflow-y: visible!important;
+        
+        .interface-container {
+            
+            &>div:last-child {            
+                position:static;
+                font-size: 35px;
+            }
+            &.final-score {
+                overflow-y: visible;
+                max-height: inherit;
+            }
+        }
+    }
+}
+
